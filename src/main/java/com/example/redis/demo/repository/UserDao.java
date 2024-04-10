@@ -10,4 +10,6 @@ public interface UserDao {
     List<User> fetchAllUsers();
 
     User fetchUser(long id);
+
+    boolean deleteUser(long id);
 }

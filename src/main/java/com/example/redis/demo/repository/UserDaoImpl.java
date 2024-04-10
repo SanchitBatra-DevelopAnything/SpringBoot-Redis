@@ -43,4 +43,16 @@ public class UserDaoImpl implements UserDao{
         user = (User)redisTemplate.opsForHash().get(KEY , id+"");
         return user;
     }
+
+    @Override
+    public boolean deleteUser(long id) {
+        try {
+            redisTemplate.opsForHash().delete(KEY , id+"");
+            return true;
+        }catch(Exception e)
+        {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
