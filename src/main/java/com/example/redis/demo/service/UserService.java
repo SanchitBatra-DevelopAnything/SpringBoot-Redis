@@ -5,6 +5,8 @@ import com.example.redis.demo.repository.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -13,5 +15,9 @@ public class UserService {
 
     public boolean saveUser(User user) {
         return userDAO.saveUser(user);
+    }
+
+    public List<User> fetchAllUsers() {
+        return userDAO.fetchAllUsers();
     }
 }
