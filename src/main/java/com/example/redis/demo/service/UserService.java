@@ -20,4 +20,8 @@ public class UserService {
     public List<User> fetchAllUsers() {
         return userDAO.fetchAllUsers();
     }
+
+    public User fetchUser(long id) {
+        return userDAO.fetchUser(id);
+    }
 }

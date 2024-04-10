@@ -35,4 +35,12 @@ public class UserDaoImpl implements UserDao{
         users = redisTemplate.opsForHash().values(KEY);
         return users;
     }
+
+    @Override
+    public User fetchUser(long id) {
+        User user;
+        //String , Object stored tha , to ab object aayga and we need to cast it back to User again.
+        user = (User)redisTemplate.opsForHash().get(KEY , id+"");
+        return user;
+    }
 }

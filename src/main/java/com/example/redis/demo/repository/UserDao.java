@@ -8,4 +8,6 @@ public interface UserDao {
     public boolean saveUser(User user);
 
     List<User> fetchAllUsers();
+
+    User fetchUser(long id);
 }
